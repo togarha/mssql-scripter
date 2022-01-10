@@ -187,7 +187,8 @@ class ScriptingOptions(object):
             u'Script110Compat',
             u'Script120Compat',
             u'Script130Compat',
-            u'Script140Compat'],
+            u'Script140Compat',
+            u'Script150Compat'],
         u'TargetDatabaseEngineEdition': [
             u'SqlServerStandardEdition',
             u'SqlServerPersonalEdition',

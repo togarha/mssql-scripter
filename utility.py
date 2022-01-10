@@ -60,10 +60,7 @@ def get_current_platform():
 
     run_time_id = None
     if system == 'Windows':
-        if arch == '32bit':
-            run_time_id = 'win32'
-        elif arch == '64bit':
-            run_time_id = 'win_amd64'
+        run_time_id = 'win_amd64'
     elif system == 'Darwin':
         run_time_id = 'macosx_10_11_intel'
     elif system == 'Linux':

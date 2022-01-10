@@ -118,10 +118,11 @@ def parse_arguments(args):
             '2012',
             '2014',
             '2016',
-            'vNext',
+            '2017',
+            '2019',
             'AzureDB',
             'AzureDW'],
-        default=u'2016',
+        default=u'2019',
         help=u'Script only features compatible with the specified SQL Version.')
 
     parser.add_argument(
@@ -501,7 +502,8 @@ def map_server_options(parameters):
         u'2012': u'Script110Compat',
         u'2014': u'Script120Compat',
         u'2016': u'Script130Compat',
-        u'vNext': u'Script140Compat',
+        u'2017': u'Script140Compat',
+        u'2019': u'Script150Compat',
     }
 
     target_server_version = parameters.ScriptCompatibilityOption

@@ -15,6 +15,9 @@
 
 mssql-scripter
 ===============
+This is a fork of microsoft mssql-scripter with the only changes to support latest version of sqltoolservice, which at this point is v3.0.0-release.181. This version supports MS Server 2019 while original mssql-scripter does not. Any further documentation is the original documentation from microsoft.
+
+
 We’re excited to introduce mssql-scripter, a multi-platform command line
 experience for scripting SQL Server databases.
 
