@@ -3,12 +3,12 @@
 ## Quick Start
 mssql-scripter is installed via pip.  If you know pip, you can install mssql-scripter using command
 ```shell
-$ pip install mssql-scripter 
+$ pip install wpg-mssql-scripter 
 ```
 This command may need to run as sudo if you are installing to the system site packages. mssql-scripter can be 
 installed using the --user option, which does not require sudo.
 ```shell
-$ pip install --user mssql-scripter 
+$ pip install --user wpg-mssql-scripter 
 ```
 
 If you are having installation issues, see the [troubleshooting](#troubleshooting) section for known issues and workarounds.  
@@ -17,7 +17,7 @@ If you are having installation issues, see the [troubleshooting](#troubleshootin
 
 Upon installation, mssql-scripter will detect the operating system or distribution of the host to install the mssqltoolsservice, a platform specific native dependency. Due to this native dependency being detected during the setup.py install, it is recommended that wheel caches not be shared amongst different operating system platforms and distributions. If you upgrade your operating system or distribution, please reinstall mssql-scripter with --no-cache-dir option.
 ```shell
-$ pip install mssql-scripter --no-cache-dir
+$ pip install wpg-mssql-scripter --no-cache-dir
 ```
 
 ## Detailed Instructions
@@ -53,7 +53,7 @@ $ sudo pip install --upgrade pip
 Install mssql-scripter using command:
 
 ```shell
-$ sudo pip install mssql-scripter 
+$ sudo pip install wpg-mssql-scripter 
 ```
 
 # Linux Installation
@@ -73,7 +73,7 @@ $ sudo pip install --upgrade pip
 Install mssql-scripter using command:
 
 ```shell
-$ sudo pip install mssql-scripter 
+$ sudo pip install wpg-mssql-scripter 
 ```
 If you are using Ubuntu or Debian, you'll need to install the libunwind8 package.  See the [libunwind8 installation steps below](#installing-the-libunwind8-package).
 
@@ -85,7 +85,7 @@ Python is not installed by default on Windows.  The latest Python installation p
 
 Once Python is installed and in the PATH environment variable, open a command prompt, and install mssql-scripter using the command:
 ```shell
-C:\> pip install mssql-scripter 
+C:\> pip install wpg-mssql-scripter 
 ```
 
 # Troubleshooting

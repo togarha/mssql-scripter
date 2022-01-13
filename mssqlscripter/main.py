@@ -25,7 +25,7 @@ logger = logging.getLogger(u'mssqlscripter.main')
 
 def main(args):
     """
-        Main entry point to mssql-scripter.
+        Main entry point to wpg-mssql-scripter.
     """
     scripterlogging.initialize_logger()
     logger.info('Python Information :{}'.format(sys.version_info))

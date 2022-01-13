@@ -38,9 +38,9 @@ if sys.version_info < (3, 4):
 
 setup(
     install_requires=DEPENDENCIES,
-    name='mssql-scripter',
+    name='wpg-mssql-scripter',
     version=MSSQLSCRIPTER_VERSION,
-    description='Microsoft SQL Scripter Command-Line Tool',
+    description='ADI WPG fork of Microsoft SQL Scripter Command-Line Tool',
     license='MIT',
     author='Microsoft Corporation',
     author_email='sqlcli@microsoft.com',
@@ -50,8 +50,8 @@ setup(
     classifiers=CLASSIFIERS,
     include_package_data=True,
     scripts=[
-        'mssql-scripter',
-        'mssql-scripter.bat'
+        'wpg-mssql-scripter',
+        'wpg-mssql-scripter.bat'
     ],
     packages=[
         'mssqlscripter',

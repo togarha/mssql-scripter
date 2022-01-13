@@ -23,7 +23,7 @@ def print_heading(heading, f=None):
 
 def build(platform_names):
     """
-        Builds mssql-scripter package.
+        Builds wpg-mssql-scripter package.
     """
     print_heading('Cleanup')
 
@@ -36,7 +36,7 @@ def build(platform_names):
     utility.exec_command('pip install -r dev_requirements.txt', utility.ROOT_DIR)
 
     # convert windows line endings to unix for mssql-cli bash script
-    utility.exec_command('python dos2unix.py mssql-scripter mssql-scripter', utility.ROOT_DIR)
+    utility.exec_command('python dos2unix.py wpg-mssql-scripter wpg-mssql-scripter', utility.ROOT_DIR)
 
     for platform in platform_names:
         utility.clean_up(utility.MSSQLSCRIPTER_BUILD_DIRECTORY)
@@ -44,7 +44,7 @@ def build(platform_names):
 
         mssqltoolsservice.copy_sqltoolsservice(platform)
 
-        print_heading('Building mssql-scripter {} wheel package package'.format(platform))
+        print_heading('Building wpg-mssql-scripter {} wheel package package'.format(platform))
         utility.exec_command('python --version', utility.ROOT_DIR)
         utility.exec_command(
             'python setup.py check -r -s bdist_wheel --plat-name {}'.format(platform),
@@ -98,10 +98,10 @@ def _upload_package(service, file_path, pkg_name):
 
 def validate_package(platform_names):
     """
-        Install mssql-scripter wheel package locally.
+        Install wpg-mssql-scripter wheel package locally.
     """
     root_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '..'))
-    # Local install of mssql-scripter.
+    # Local install of wpg-mssql-scripter.
     mssqlscripter_wheel_dir = os.listdir(utility.MSSQLSCRIPTER_DIST_DIRECTORY)
     current_platform = utility.get_current_platform()
 
@@ -115,7 +115,7 @@ def validate_package(platform_names):
 
 def publish_daily(platforms_names):
     """
-    Publish mssql-scripter wheel package to daily storage account.
+    Publish wpg-mssql-scripter wheel package to daily storage account.
     """
     print('Publishing to simple container within storage account.')
     assert AZURE_STORAGE_CONNECTION_STRING, 'Set AZURE_STORAGE_CONNECTION_STRING environment variable'
@@ -126,16 +126,16 @@ def publish_daily(platforms_names):
     for pkg in os.listdir(utility.MSSQLSCRIPTER_DIST_DIRECTORY):
         pkg_path = os.path.join(utility.MSSQLSCRIPTER_DIST_DIRECTORY, pkg)
         print('Uploading package {}'.format(pkg_path))
-        _upload_package(blob_service, pkg_path, 'mssql-scripter')
+        _upload_package(blob_service, pkg_path, 'wpg-mssql-scripter')
         
     # Upload index files
-    _gen_pkg_index_html(blob_service, 'mssql-scripter')
+    _gen_pkg_index_html(blob_service, 'wpg-mssql-scripter')
     _upload_index_file(blob_service, 'index.html', 'Simple Index', UPLOADED_PACKAGE_LINKS)
 
 
 def publish_official(platforms_names):
     """
-    Publish mssql-scripter wheel package to PyPi.
+    Publish wpg-mssql-scripter wheel package to PyPi.
     """
     mssqlscripter_wheel_dir = os.listdir(utility.MSSQLSCRIPTER_DIST_DIRECTORY)
     # Run twine action for mssqlscripter.

@@ -22,7 +22,7 @@ def get_config_log_file():
     """
         Retrieve log file path.
     """
-    return os.path.join(get_config_log_dir(), u'mssql-scripter.log')
+    return os.path.join(get_config_log_dir(), u'wpg-mssql-scripter.log')
 
 
 def initialize_logger():

@@ -19,7 +19,7 @@ def parse_arguments(args):
         Initialize parser with scripter options.
     """
     parser = argparse.ArgumentParser(
-        prog=u'mssql-scripter',
+        prog=u'wpg-mssql-scripter',
         description=u'Microsoft SQL Server Scripter Command Line Tool. ' +
         'Version {}'.format(mssqlscripter.__version__))
 
