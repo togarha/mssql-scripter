@@ -15,6 +15,7 @@ import mssqlscripter.mssqltoolsservice.external as mssqltoolsservice
 AZURE_STORAGE_CONNECTION_STRING = os.environ.get('AZURE_STORAGE_CONNECTION_STRING')
 BLOB_CONTAINER_NAME = 'simple'
 UPLOADED_PACKAGE_LINKS = []
+ADI_PYPI = 'https://artifactory.analog.com/artifactory/api/pypi/adi-pypi'
 
 
 def print_heading(heading, f=None):
@@ -135,7 +136,7 @@ def publish_daily(platforms_names):
 
 def publish_official(platforms_names):
     """
-    Publish wpg-mssql-scripter wheel package to PyPi.
+    Publish wpg-mssql-scripter wheel package to ADI PyPi.
     """
     mssqlscripter_wheel_dir = os.listdir(utility.MSSQLSCRIPTER_DIST_DIRECTORY)
     # Run twine action for mssqlscripter.
@@ -143,7 +144,7 @@ def publish_official(platforms_names):
     # Credentials will be stored in a .pypirc file.
     for mssqlscripter_wheel_name in mssqlscripter_wheel_dir:
         utility.exec_command(
-            'twine upload {}'.format(mssqlscripter_wheel_name),
+            'twine upload --repository-url {} {}'.format(ADI_PYPI, mssqlscripter_wheel_name),
             utility.MSSQLSCRIPTER_DIST_DIRECTORY)
 
 
@@ -157,7 +158,6 @@ if __name__ == '__main__':
     targets = {
         'build': build,
         'validate_package': validate_package,
-        'publish_daily': publish_daily,
         'publish_official': publish_official
     }
 
