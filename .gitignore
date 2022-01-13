@@ -95,6 +95,8 @@ ENV/
 /mssqlscripter/sqltoolsservice/*
 /mssqlscripter/mssqltoolsservice/bin/*
 
+# pycharm configuration
+.idea/*
 
 # VSCode configuration
 .vscode/*
